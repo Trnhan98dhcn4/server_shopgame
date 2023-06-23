@@ -34,6 +34,19 @@ class NintendoController {
             next(error);
         }
     };
+    getSearchNintendo = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) => {
+        const searchQuery = req.query.q;
+        await nintendoIdentity
+            .find({ title: { $regex: searchQuery, $options: "i" } })
+            .then((response) => res.status(200).json(response))
+            .catch((error) => {
+                next(error);
+            });
+    };
 }
 
 export default new NintendoController();
