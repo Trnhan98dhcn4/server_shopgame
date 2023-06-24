@@ -2,10 +2,12 @@ import createHttpError, { isHttpError } from "http-errors";
 import { Request, Response, NextFunction } from "express";
 import nintendoRouter from "./nintendo.router";
 import diskGameRouter from "./diskgame.router";
+import cartShopRouter from "./cartshop.router";
 
 const router = (app: any) => {
     app.use("/nintendo", nintendoRouter);
     app.use("/disk", diskGameRouter);
+    app.use("/cart", cartShopRouter);
 
     app.use((req: Request, res: Response, next: NextFunction) => {
         next(createHttpError(404, "Endpoint not found"));
