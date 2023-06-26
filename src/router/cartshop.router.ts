@@ -7,5 +7,9 @@ const router = express.Router();
 router.post("/", cartShopController.postCartShop);
 //[GET]/cart
 router.get("/", cartShopController.getAllCartShop);
+//[PUT]/cart/:key
+router.put("/:id", cartShopController.putCartShop);
+//[DELETE]/cart/:key
+router.delete("/:key", cartShopController.deleteCardShop);
 
 export default router;
