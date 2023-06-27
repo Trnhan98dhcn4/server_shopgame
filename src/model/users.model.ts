@@ -4,4 +4,5 @@ export interface IUsersModel {
     name: string;
     address: string;
     price: string;
+    avatar: string;
 }
