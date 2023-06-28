@@ -11,5 +11,7 @@ router.get("/", cartShopController.getAllCartShop);
 router.put("/:id", cartShopController.putCartShop);
 //[DELETE]/cart/:key
 router.delete("/:key", cartShopController.deleteCardShop);
+//[DELETE]/cart/all
+router.delete("/", cartShopController.deleteAllCartShop);
 
 export default router;

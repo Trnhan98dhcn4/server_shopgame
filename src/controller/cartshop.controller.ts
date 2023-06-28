@@ -78,6 +78,20 @@ class CardShopController {
             })
             .catch((error) => next(error));
     };
+    deleteAllCartShop = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) => {
+        try {
+            const result = await cartShopSchema.deleteMany({});
+            res.status(200).json({
+                message: `${result.deletedCount} documents deleted`,
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
 }
 
 export default new CardShopController();

@@ -3,6 +3,13 @@ export interface IUsersModel {
     password: string;
     name: string;
     address: string;
-    price: string;
+    pricePrev: string;
     avatar: string;
+
+    historyUser: {
+        img1: string;
+        title: string;
+        price: string;
+        SL: string;
+    }[];
 }

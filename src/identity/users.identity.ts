@@ -6,8 +6,17 @@ const UserSchema = new Schema(
         password: String,
         name: String,
         address: String,
-        price: String,
         avatar: String,
+        pricePrev: String,
+        //lich su mua hang
+        historyUser: [
+            {
+                img1: String,
+                title: String,
+                price: String,
+                SL: String,
+            },
+        ],
     },
     {
         timestamps: true,
